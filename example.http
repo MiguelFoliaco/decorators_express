@@ -1,12 +1,12 @@
-GET https://9lvlmz-3000.csb.app/params/Miguel HTTP/1.1
+GET http://localhost:3000/params/Miguel HTTP/1.1
 
 ###
 
-GET https://9lvlmz-3000.csb.app/ HTTP/1.1
+GET http://localhost:3000 HTTP/1.1
 
 ###
 
-POST https://9lvlmz-3000.csb.app/ HTTP/1.1
+POST http://localhost:3000 HTTP/1.1
 content-type: application/json
 
 {

@@ -1,10 +1,16 @@
+import cors from 'cors';
 import express, { Application } from "express";
 
 type stateContext = {
   app: Application;
 };
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 let state: stateContext = {
-  app: express(),
+  app,
 };
 
 // Funciones para acceder y actualizar el estado

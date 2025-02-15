@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import { getState } from "./context";
 import { ReturnExecute } from "./route.types";
 
@@ -20,7 +19,7 @@ export const post = (path: string) => {
   return (...args: any) => {
     const fn = args[2].value;
     app.post(path, (req, res, _next) => {
-      const body = JSON.parse(req.body);
+      const body = typeof req?.body === "string" ? JSON.parse(req?.body) : (req?.body || {});
       const execute = fn(body, req, _next) as ReturnExecute;
       return res.status(execute.status || 200).json(execute.data);
     });
