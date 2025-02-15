@@ -17,7 +17,7 @@ Follow these instructions to get your local development environment set up.
 ### Prerequisites
 
 - Node.js
-- Yarn (or npm)
+- npm
 
 ### Installation
 
@@ -29,64 +29,21 @@ Follow these instructions to get your local development environment set up.
 
 2. Install dependencies:
    ```sh
-   yarn install
+   npm install
    ```
 
 ### Running the Server
 
 Start the HTTP server by running:
 ```sh
-yarn start
+npm start
 ```
 
 The server will run at `http://localhost:8080`.
 
-## Usage
-
-### Creating Routes with Decorators
-
-To create a new route, simply use the `@Route` decorator.
-
-Example:
-```typescript
-import { Controller, Get, Post } from 'decorators-express';
-
-@Controller('/users')
-class UserController {
-  @Get('/')
-  getAllUsers(req, res) {
-    res.send('Get all users');
-  }
-
-  @Post('/')
-  createUser(req, res) {
-    res.send('Create user');
-  }
-}
-```
-
-### Adding Middlewares
-
-You can also add middlewares using decorators.
-
-Example:
-```typescript
-import { Controller, Get, Middleware } from 'decorators-express';
-
-@Controller('/auth')
-class AuthController {
-  @Get('/login')
-  @Middleware(authMiddleware)
-  login(req, res) {
-    res.send('User login');
-  }
-}
-```
+I looked at how routes are declared in "src\www\index.ts"
 
 ## Resources
-
-- [CodeSandbox Documentation](https://codesandbox.io/docs)
-- [CodeSandbox Community](https://codesandbox.community)
 
 Feel free to explore the project on [CodeSandbox](https://codesandbox.io/p/github/MiguelFoliaco/decorators_express/main) and see it in action!
 
